@@ -5,7 +5,7 @@ Form Validation helper for form input validations.
 
 
 ```bash
-npm install -------
+npm install --save form-validation-package
 ```
 
 ## Usage
@@ -25,7 +25,7 @@ in HTML file
 
 in app.js file 
 ```
-import {FormValidationModule} from './formValidationModule';
+import {FormValidationModule} from 'form-validation-package';
 
 document.querySelector("#sendForm").addEventListener("click", (e) => {
   e.preventDefault();
@@ -50,7 +50,27 @@ document.querySelector("#sendForm").addEventListener("click", (e) => {
 });
 ```
 
+PARAMETERS
+```
+formValidation ([
+  {
+      name: "Input name that assigned to name property eg: username",
+      rules: [
+        { name: "required", value: true, errMsg: "this input is required" },
+        { name: "maxLength", value: 10, errMsg: "maxlength error" },
+        { name: "minLength", value: 3, errMsg: "minlength error" },
+        { name: "pattern", value: /\$.js/, errMsg: "Pattern error" },
 
+      ] // array of validation rules
+    },
+]);
+
+// validation rule object 
+{name: 'required | maxLength | minLength | pattern', value: "", errMsg: 'provided error msg'}
+```
 
 ## License
-Mohamed Attia
+Form-Validation-Package @2020 dev by: Mohamed Attia
+
+## Keywords
+form - formValidation
